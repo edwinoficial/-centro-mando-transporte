@@ -55,7 +55,7 @@ export default function Usuarios() {
       setUsers((prev) => prev.map((u) => (u.id === editId ? { ...u, ...form } : u)))
       setSnackbar({ open: true, message: 'Usuario actualizado', severity: 'success' })
     } else {
-      setUsers((prev) => [...prev, { id: Date.now(), ...form }])
+      setUsers((prev) => [...prev, { id: crypto.randomUUID(), ...form }])
       setSnackbar({ open: true, message: 'Usuario agregado', severity: 'success' })
     }
     setFormOpen(false)
